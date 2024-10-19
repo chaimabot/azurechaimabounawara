@@ -26,9 +26,9 @@ jobs:
           azure_static_web_apps_api_token: ${{ secrets.NEW_AZURE_STATIC_WEB_APPS_API_TOKEN }}
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: "upload"
-          app_location: "/app" # Updated app source code path
-          api_location: "/api" # Updated API source code path
-          output_location: "build" # Updated built app content directory
+          app_location: "/app" # Chemin où se trouve index.html
+          api_location: ""  # Laissez vide si vous n'avez pas d'API
+          output_location: "" # Laissez vide si aucun processus de build n'est nécessaire
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
